@@ -10,7 +10,10 @@
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
 }
 
 .header {
@@ -25,6 +28,21 @@ body {
     justify-content: space-between;
 }
 
+@media screen and (max-width: 1024px) {
+    .navbar {
+        margin: 0 0 0 -35px;
+        width: 104%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
 .logo {
     width: 120px;
     cursor: pointer;
@@ -35,6 +53,20 @@ body {
     padding: 0 35px 0 0;
 }
 
+@media screen and (max-width: 1024px) {
+    .navbar ul {
+        padding: 0;
+        font-size: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar ul {
+        margin-top: 40px;
+        width: 100%
+    }
+}
+
 .navbar ul li {
     list-style: none;
     display: inline-block;
@@ -43,15 +75,38 @@ body {
     font-size: 20px;
 }
 
+@media screen and (max-width: 768px) {
+    .navbar ul li {
+        text-align: center;
+        width: 50%;
+        margin-left: 0;
+        margin-right: 0;
+        border-bottom: 3px solid #f2f2f2;
+        padding: 0 0 15px 0;
+    }
+}
+
+
 .navbar ul li::after {
- content: '';
- height: 2px;
- width: 0%;
- background: #0065fc;
- position: absolute;
- left: 0;
- top: -14px;
- 
+    content: '';
+    height: 2px;
+    width: 0%;
+    background: #0065fc;
+    position: absolute;
+    left: 0;
+    top: -14px;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar ul li::after {
+        content: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar ul li:after {
+        top: 40px;
+    }
 }
 
 .navbar ul li:hover:after {
@@ -63,10 +118,33 @@ body {
     color : #0065fc;
 }
 
+@media screen and (max-width: 768px) {
+    .navbar ul li:hover {
+        border-bottom: 3px solid #0065fc;
+    }
+
+    .navbar ul li:hover >a {
+        color: #0065fc;
+        border-top: none;
+    }
+}
+
 section#intro {
-    padding : 0 0 0 70px;
+    margin : 0 0 0 70px;
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 1024px) {
+    section#intro {
+        margin: 0 0 0 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section#intro {
+        margin: 0 0 0 20px;
+    }
 }
 
 #intro h1 {
@@ -79,8 +157,20 @@ section#intro {
 }
 
 form {
-    padding: 0 0 0 70px;
+    margin: 0 0 0 70px;
     margin-top: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+    form {
+        margin: 32px 0 0 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    form {
+        margin: 32px 0 0 20px
+    }
 }
 
 .search-bar {
@@ -127,7 +217,21 @@ form {
     flex-direction: row;
     align-items: center;
     gap: 30px;
-    padding: 50px 0 0 70px;
+    margin: 50px 0 0 70px;
+}
+
+@media screen and (max-width: 1024px){
+    .filtres {
+        flex-direction: column;
+        align-items: baseline;
+        margin: 50px 0 0 35px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .filtres {
+        margin: 50px 0 0 20px;
+    }
 }
 
 .icon-filtre {
@@ -171,8 +275,21 @@ form {
     flex-direction: row;
     align-items: center;
     gap: 12px;
-    padding: 40px 0 0 70px;
+    margin: 40px 0 0 70px;
 }
+
+@media screen and (max-width: 1024px) {
+    .info {
+        margin: 40px 0 0 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .info {
+        margin: 40px 0 0 20px;
+    }
+}
+
 
 .info .icon-container {
     min-width: 23px;
@@ -200,6 +317,19 @@ form {
     gap: 40px;
 }
 
+@media screen and (max-width: 1024px) {
+    .hosting-menu {
+        flex-direction: column;
+        margin: 40px 0 0 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hosting-menu {
+        margin: 40px 0 0 0px;
+    }
+}
+
 .hosting {
     background: #f2f2f2;
     width: 85%;
@@ -210,11 +340,26 @@ form {
     gap: 30px;
 }
 
+@media screen and (max-width: 1024px) {
+    .hosting {
+        width: 96%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .hosting {
+        border-radius: 0;
+        width: 100%;
+        background: #ffffff;
+        order: 2;
+    }
+}
+
 .hosting h2 {
     font-size: 24px;
 }
 
-.cards {
+.hosting .cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -222,8 +367,20 @@ form {
     gap: 30px 0;
 }
 
+@media screen and (max-width: 768px){
+    .hosting .cards {
+        flex-direction: column;
+    }
+}
+
 .hosting .cards a {
     width: 31%;
+}
+
+@media screen and (max-width: 768px) {
+    .hosting .cards a {
+        width: 100%;
+    }
 }
 
 .hosting .cards .card {
@@ -245,6 +402,12 @@ form {
     height: 114px;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
+}
+
+@media screen and (max-width: 768px) {
+    .hosting .cards .card img {
+        height: 250px;
+    }
 }
 
 .hosting .cards .card .container {
@@ -291,6 +454,20 @@ form {
     gap: 30px;
 }
 
+@media screen and (max-width: 1024px) {
+    .popular {
+        width: 96%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .popular {
+        border-radius: 0px;
+        width: 100%;
+        order: 1;
+    }
+}
+
 .popular .title {
     display: flex;
     justify-content: space-between;
@@ -303,8 +480,26 @@ form {
     gap: 30px;
 }
 
-.popular .cards a{
+@media screen and (max-width: 768px) {
+    .popular .cards {
+        flex-direction: column;
+    }
+}
+
+.popular .cards a {
    width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .popular .cards a {
+        width: 31%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .popular .cards a {
+        width: 100%;
+    }
 }
 
 .popular .cards .card {
@@ -364,15 +559,42 @@ form {
     gap: 30px;
 }
 
+@media screen and (max-width: 1024px){
+    .activity-menu {
+        margin: 400px 0 0 35px;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    .activity-menu {
+        margin: 2500px 0 0 20px;
+    }
+}
+
 .activity-menu .cards {
     display: flex;
     justify-content: space-between;
     height: 450px;
 }
 
+@media screen and (max-width: 768px) {
+    .activity-menu .cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
 .activity-menu .cards a{
     width: 22%;
     height: 100%;
+ }
+
+ @media screen and (max-width: 768px) {
+    .activity-menu .cards a {
+        width: 100%;
+        height: 80%;
+    }
  }
 
 .activity-menu .cards .card {
@@ -415,12 +637,25 @@ form {
 
 footer .container {
     background : #f2f2f2;
-    max-width: 90%;
+    max-width: 100%;
     margin: auto;
     padding: 50px 50px;
     display: flex;
     flex-direction: row;
     gap: 250px;
+}
+
+@media screen and (max-width: 1024px) {
+    footer .container {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer .container {
+        flex-direction: column;
+        gap: 65px;
+    }
 }
 
 .links {
